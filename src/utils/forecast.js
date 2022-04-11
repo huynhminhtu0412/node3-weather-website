@@ -10,8 +10,8 @@ const forecast = (latitude,longitude, callback) => {
         callback('Unable to find data for given location. Please try again!', undefined)
 
     } else {
-        callback(undefined, 'It is currently ' + body.current.temperature + ' degrees out.' + ' It feels like ' + body.current.feelslike + ' degrees out.')
-
+        console.log(body.current)
+        callback(undefined, body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees out.' + ' It feels like ' + body.current.feelslike + ' degrees out.' + ' The humidity is ' + body.current.humidity)
     }
     // console.log(response.body.current.weather_descriptions[0])
     // console.log('It is currently ' + response.body.current.temperature + ' degrees out.')
